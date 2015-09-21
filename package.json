@@ -1,7 +1,7 @@
 {
-  "name": "esnext-quickstart",
+  "name": "jade-react-loader-example",
   "version": "1.0.0",
-  "description": "ESNext quickstart",
+  "description": "Example of a React App Using the Webpack Loader for Jade Templates",
   "engines": {
     "iojs": ">=1.0",
     "node": ">=0.10"
@@ -10,19 +10,14 @@
     "type": "git",
     "url": "https://github.com/nkbt/esnext-quickstart.git"
   },
-  "author": "Nik Butenko <nik@butenko.me> (http://butenko.me/)",
+  "author": "Hal Henke <halhenke@gmail.com> (http://halhenke.info/)",
   "license": "MIT",
   "scripts": {
     "build": "npm run build:clean && npm run build:example",
     "build:clean": "rm -rf example",
     "build:example": "webpack",
     "start": "NODE_ENV=development webpack-dev-server",
-    "lint": "eslint .",
-    "karma": "karma start ./karma.conf.js",
-    "test": "npm run karma --  --single-run --reporters nyan",
-    "test:dev": "npm run karma -- --no-single-run --auto-watch --reporters nyan",
-    "test:cov": "COVERAGE=1 npm run karma -- --single-run --reporters coverage",
-    "check": "npm run lint && npm run test && npm run build"
+    "lint": "eslint ."
   },
   "dependencies": {
     "babel-core": "^5.8.3",
@@ -35,23 +30,12 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.0",
     "inject-loader": "^2.0.0",
-    "isparta-loader": "^0.2.0",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.37",
-    "karma-coverage": "^0.4.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-junit-reporter": "^0.3.2",
-    "karma-nyan-reporter": "0.2.1",
-    "karma-phantomjs-launcher": "^0.2.0",
-    "karma-webpack": "^1.6.0",
+    "jade-react-loader": "^1.0.0",
     "lodash": "^3.10.0",
     "node-libs-browser": "^0.5.2",
     "null-loader": "^0.1.1",
-    "phantomjs": "^1.9.17",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
-    "react-jasmine-matchers": "^2.0.0",
-    "sorted-object": "^1.0.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "webpack": "^1.10.1",

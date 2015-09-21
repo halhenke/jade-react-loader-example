@@ -70,7 +70,8 @@ var development = {
   ],
   module: {
     loaders: assetsLoaders.concat([
-      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]}
+      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]},
+      {test: /\.jade$/, loaders: ['react-hot', 'jade-react'], include: [path.resolve('src')]}
     ]),
     preLoaders: [
       {test: /\.js$/, loaders: ['eslint'], include: [path.resolve('src')]}

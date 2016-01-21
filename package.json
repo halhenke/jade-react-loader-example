@@ -2,10 +2,6 @@
   "name": "jade-react-loader-example",
   "version": "1.0.0",
   "description": "Example of a React App Using the Webpack Loader for Jade Templates",
-  "engines": {
-    "iojs": ">=1.0",
-    "node": ">=0.10"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nkbt/esnext-quickstart.git"
@@ -33,7 +29,7 @@
     "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.7.1",
     "inject-loader": "^2.0.0",
-    "jade-react-loader": "^1.0.0",
+    "jade-react-loader": "^1.0.2",
     "lodash": "^3.10.0",
     "node-libs-browser": "^0.5.2",
     "null-loader": "^0.1.1",

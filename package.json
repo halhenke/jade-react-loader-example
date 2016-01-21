@@ -1,6 +1,6 @@
 {
   "name": "jade-react-loader-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example of a React App Using the Webpack Loader for Jade Templates",
   "repository": {
     "type": "git",

@@ -33,7 +33,9 @@ var production = {
   entry: entry,
   output: {filename: 'bundle.js', path: path.resolve('example')},
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'html!./src/index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"' + env + '"'
@@ -43,7 +45,15 @@ var production = {
 
   module: {
     loaders: assetsLoaders.concat([
-      {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]}
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        query: {
+          presets: [ 'es2015', 'react' ]
+        },
+        include: [path.resolve('src')]
+      },
+      {test: /\.jade$/, loaders: ['jade-react'], include: [path.resolve('src')]}
     ])
   },
   resolve: {extensions: ['', '.js']},
@@ -60,7 +70,9 @@ var development = {
   ]),
   output: {filename: 'bundle.js', path: path.resolve('./example')},
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'html!./src/index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"' + env + '"'
@@ -70,7 +82,7 @@ var development = {
   ],
   module: {
     loaders: assetsLoaders.concat([
-      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]},
+      {test: /\.js$/, loader: 'react-hot!babel?presets[]=react,presets[]=es2015', include: [path.resolve('src')]},
       {test: /\.jade$/, loaders: ['react-hot', 'jade-react'], include: [path.resolve('src')]}
     ]),
     preLoaders: [
